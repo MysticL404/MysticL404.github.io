@@ -1,0 +1,25 @@
+/* Looking into the .column div class I had formed up, the width played as the size modifier so the images could line up together,
+not being too far from the end of the screen whilst not creating a new column for the 5th image. */
+.column {
+    float: left;
+    width: 18%;
+    padding: 5px;
+  }
+  
+
+/* The img for CSS would mainly affect the huge image on the bottom though for reasons I can't explain, it still provides borders for 
+the images above the main portrait. Regardless, to suit the original inspiration, I had made these borders orange and kept the 
+background white. */
+  img {
+    width: 1346px;
+    padding: 10px;
+    background-color:white;
+    border: 5px solid #ff7b00;
+  }
+
+  /* This would play as the main role in adapting the same style as the reference, having some images above others but still 
+  existing within the same column as each other, just altering the margin-top and adding this div class to the 2nd and 4th image
+  would work. */
+.marginalt {
+    margin-top:50%;
+ }
