@@ -1,0 +1,110 @@
+/* z-index order */
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#ffe1c1;
+  --col-02:#414141;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --border: 1px solid var(--col-02);
+
+  /*Here in the root I've added some additional variables while having a look at the feedback from the previous week 5 task.
+  Since some of the categories such as <h1> and <h2> use the same font-style, I've made a variable specifically for those.*/
+  --font-family1:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --font-family2:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--col-01);
+  color: var(--col-02);
+  padding: 2vw;
+}
+
+/*
+  i've set up a basic flexbox for each recipe container - you might want to change some of the 
+  flex properties here on the container or on the individual flex items depending on how you want to style them
+*/
+.RecipeBox{
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  margin-bottom:30px;
+  background-color: rgb(255, 200, 98);
+}
+
+.FilterSection{
+  font-size:30px;
+
+}
+
+.FilterButton{
+  font-size:20px;
+
+}
+
+
+/* Here I've added some borders for additional style as well as seperating the main images away from the information, here I'd also
+margin the image containers so they'd be centered on the users screen. */
+
+/* Another change for the image container, the writing font size was made smaller so it wouldn't stretch the container for the
+skinnier images of food. */
+
+.RecipeImageContainer{
+  margin:auto;
+  border-style:double;
+  border-color:rgb(255, 95, 95);
+  background-color:rgb(255, 150, 181);
+  margin-bottom:20px;
+  font-size:10px;
+  font-family:var(--font-family1);
+
+}
+
+.RecipeImg{
+  margin-left:auto;
+
+}
+
+.Publisher{
+  margin:auto;
+  font-size:30px;
+  font-family:var(--font-family1);
+
+}
+
+/* Many of the div categories provided were removed by me as I felt having so many categories for little points of information was
+quite unneccessary to have, not every bit needed it's own unique style or size and I only deemed the publisher to be the more important
+part of information deserving of a larger font-size or style */
+
+.Subinfo{
+  margin:auto;
+  margin-top:2px;
+  margin-bottom:auto;
+  font-size:large;
+  font-family:var(--font-family1);
+
+}
+
+
+/* The margin and font size of the h1 category have been styled and edited through the CSS here */
+h1 {
+  margin:auto;
+  font-size:50px;
+  font-family:var(--font-family2);
+}
+
+h2 {
+  margin:auto;
+  font-size:30px;
+  font-family:var(--font-family2);
+}
