@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!-- 
+
+  PROVIDE MEANINGFUL FEEDBACK TO THE FOLLOWING ELEMENTS:
+  Checklist =
+  1) <button> with the id of load-link on the loading page (index.html) DONE
+  2) <div> with the id of load-throbber on the loading page (index.html) DONE
+  3) <li> inside of the <ol> inside of the <nav> on the information page (hosono.html) DONE
+  4) <button> with the id of mode-button on the information page (hosono.html) DONE
+
+  5) switchModes() function - hint you can add a transition CSS property to the <body> and it will be inherited 
+     by all the elements inside, so when custom CSS variables are changed it will apply transition
+
+-->
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Loading Page</title>
+
+    <script src="./fakeLoad.js" defer></script>
+
+  </head>
+
+  <body id="load-body">
+
+      <h1>Haruomi Hosono</h1>
+      <!--
+        Typically I'd use an <a> here but as we're faking a load time I'm using a <button> instead.  If it was an 
+        <a> I would leave off the target attribute so that it would redirect the current tab.
+      -->
+      <!--
+        The function loadPageAfterDelay() is declared in the file fakeLoad.js - it takes a number value that sets the 
+        amount of time it takes in ms and a url to redirect to.
+      -->
+      <button id="load-link" onclick="loadPageAfterDelay(10000, './hosono.html')">Click to Load Page</button>
+      <!--
+        This is a div we're using for the throbber - if we wanted to do a % based loading bar there is an element 
+        called <progress> but as this one is just indicating a wait rather than providing direct feedback on progress I've 
+        opted for using a <div>.
+      -->
+      <div id="load-throbber">Now Loading, Please Be Patient...</div>
+
+  </body>
+
+</html>

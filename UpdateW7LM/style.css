@@ -1,0 +1,278 @@
+/*
+  This one CSS file is imported into both index.html AND hosono.html so you need to be careful that it 
+  works for both.
+*/
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+  margin: 0;
+}
+
+:root{
+  /* first two colours come from Kuroi's Manga Pallete Palette */
+  /* https://lospec.com/palette-list/manga-pallete */
+  --col-01:#171219;
+  --col-02:#f2fbeb;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --col-05:blue;
+  font-size: 16px;
+  /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
+  scroll-behavior: smooth;
+}
+
+/* As for the body, I've implemented a unique animation which basically shifts the tone of the background and colors into opposites.
+While this plays as a nice smooth transition for the webpage, it's also quite practical. When instantly changing, this could be
+bothersome for the users eyesight and so a slower change can help adjust the eyesight. Whether the screen may be too dark or bright,
+each mode can assist the user so they can easily read it without losing concentration.
+EDITOR NOTE ^ */
+body{
+  padding: 1rem;
+  background-color: var(--col-02);
+  color: var(--col-01);
+  transition-property:var(--col-01);
+  transition-duration:4s;
+} /* Additional Note: I tried adding this type of transition within the @keyframes although I had trouble making it. */
+
+nav {
+  margin-top: 1rem;
+}
+
+/* nav li % nav li:hover changes start: */
+nav li{
+  font-size: 2rem;
+}
+
+/* This feedback design took a fair bit of time to understand although eventually I figured out what I was going to do. Since the nav
+had shortcuts with the <a> element, I would need to make the CSS styling category much more specific since intially I had every
+link and shortcut playing the animation and transformation when I only wanted it to occur when hovering above these numbered titles.
+Another keyframe animation was designed to play a transition with the text growing and shrinking in size rapidly though not too quickly
+to the point where it's hard to read, it was here when I implemented the 5th variant of colour in the :root of this CSS styling as well.
+With the cursor turning into a pointer as well like the loading screen, it would be made clear that these numbered titles were :active
+and could be interacted by the user. Going back to the category, I coded a <nav ol li a> and the :hover class so this animation and
+colour change were only present when under the users arrow. Like the previous link/shortcut, this was done so the user could tell that
+the titles could be clicked and weren't just groups of additional text.
+EDITOR NOTE ^ */
+nav ol li a:hover{
+  animation: ligrow 0.5s infinite ease;
+  cursor: pointer;
+  color:var(--col-05)
+}
+
+/* An additional category using the :active class has been added, this is mainly just to indicate that the user has successfully clicked
+the numbered title, although it will only be seen for a brief moment unless the user holds left click.
+EDITOR NOTE ^ */
+nav ol li a:active{
+  border: 2px var(--col-03) dotted;
+  background-color: gray;
+}
+
+
+/* (nav li) & (nav ol li a:hover) changes end. (+nav ol li a:active) */
+
+section{
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 3rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+p{
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+figcaption{
+  width: fit-content;
+}
+
+dl ul{
+  margin-bottom: 0;
+}
+
+li{
+  font-size: 1rem;
+}
+
+dd{
+  padding-left: 60px;
+}
+
+li ul{
+  padding-left: 40px;
+}
+
+.img-wrapper{
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.img-figure{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-img{
+  width: 80%;
+}
+
+.res-columns{
+  column-width: 25rem;
+}
+
+/* Start of mode-button changes: */
+
+#mode-button{
+  float: right;
+  /* note the use of position: sticky to keep the button on the page even with scrolling */
+  position: sticky;
+  top: 1rem;
+  font-size:2rem;
+}
+
+#mode-button:hover{
+  cursor:pointer;
+  animation: ligrow 0.5s infinite ease;
+}
+
+#mode-button:active{
+  background-color:gray;
+  font-style:oblique;
+  border: 2px var(--col-03) dotted;
+}
+/* code for loading page */
+
+#load-body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* changing button to look like a link */
+/* Not too much can be said here apart from the cursor changing from a simple arrow to a clicking hand, this is to tell the audience
+that this text can be clicked, more coding has been implemented upon the load-link:hover which can be seen below this element.
+EDITOR COMMENT ^ */
+#load-link{
+  line-height: 1rem;
+  background-color: transparent;
+  border: 0;
+  cursor:pointer;
+}
+
+/* Just another :active comment for this, another blue border to indicate that it has been pressed.
+EDITOR NOTE ^ */
+#load-link:active {
+  border: var(--col-03) 2px dotted;
+}
+
+/* the hovering version of load-link */
+/* To give some feedback design, I've coded into the CSS so when the mouse is hovering above the load-link the text will enlargen as
+well as change to a blue text. This was mainly done so the button itself is a bit larger when hovering on it and the change of blue
+indicates that it can indeed be interacted with. I chose blue since most links always have a blue text so the user would understand
+whether it was actually clickable.
+EDITOR COMMENT ^ */
+#load-link:hover{
+  font-size:20px;
+  color:var(--col-05)
+}
+/* throbber while page is fake loading */
+/* To provide some feedback design here, the height has been slightly modified as well as the width to make it a little bit easier to
+read and see, the main focus is the animation of colours it has. To ensure the user knows there are being taken to another webpage,
+I've just added the words "Now Loading, Please Be Patient" which can be seen on the HTML, as for the colour shifting,
+it's so the user knows the webpage is working and doesn't confused them, potential ideas like their device freezing could
+occur and basically this animation solves that. Recently I also added an animation for the text inside for additonal style.
+Another update whilst working on another element was an additional variant of colour, specifically for the clickable shortcuts
+and links, this was blue since I intended to use blue for both of them.
+EDITOR NOTE ^ */
+#load-throbber{
+  width: 30%;
+  height: 1.2rem;
+  text-align:center;
+  font-style: italic;
+  animation: Loading 3s infinite ease;
+  display: none;
+}
+
+/* Media Queries */
+
+/* medium devices 600 - 992 */
+@media only screen and (min-width: 600px) {
+  :root{
+    font-size: 20px;
+  }
+  
+  .img-wrapper{
+    width: 75%;
+    margin: 1.5rem auto;
+  }
+
+}
+
+/* medium devices 992 + */
+@media only screen and (min-width: 992px) {
+  :root{
+    font-size: 24px;
+  }
+
+  .img-wrapper{
+    max-width: fit-content;
+    float: right;
+    margin: 1.5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion) {
+  :root{
+    scroll-behavior: auto;
+  }
+}
+
+/* Here I've coded up an animation for when the link is pressed on the loading screen webpage, this will change up the original blue
+bar into something more active and smooth looking. It's mainly just for style though it sort of helps tell the user that the webpage
+is processing and loading.
+EDITOR NOTE ^ */
+@keyframes Loading {
+  0% {
+    background-color: green;
+  }
+  50% {
+    background-color: yellowgreen;
+  }
+  100% {
+  background-color: Green;
+  }
+  0% {
+    color:white;
+  }
+  50% {
+    color:black;
+  }
+  100% {
+    color:white;
+  }
+}
+
+/* Another animation can be seen here, this one was coded for the numbered titles on the main webpage to tell the user that they
+can be interacted with. All this does is basically change the font size from regular size to larger back down to regular, the timing
+of these shifting font-sizes has been decided through the CSS <nav ol li a:hover> category.
+EDITOR NOTE ^ */
+@keyframes ligrow {
+  0%{
+    font-size:2rem;
+  }
+  50%{
+    font-size:2.2rem;
+  }
+  100%{
+    font-size:2rem;
+  }
+}
