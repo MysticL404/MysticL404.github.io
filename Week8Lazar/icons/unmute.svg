@@ -1,0 +1,22 @@
+<svg
+  width="100%"
+  height="100%"
+  viewBox="0 0 110 110"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <path d="M 10,42
+           A 2,2 90 0 1 12,40
+           L 15,40 30,15 35,15
+           Q 38,50 35,85 
+           L 30,85 15,60 12,60
+           A 2,2 90 0 1 10,58
+           Z" />
+  
+  <path fill="transparent" stroke="black" stroke-linecap="round" stroke-width="8"
+        d="M 50, 35
+           L 80, 65" />
+  <path fill="transparent" stroke="black" stroke-linecap="round" stroke-width="8"
+        d="M 80, 35
+           L 50, 65" />
+                 
+</svg>
