@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazar Mihaljevic Interaction A3</title>
+
+  <!-- Many Javascripts were coded as well as the CSS which is all linked up here. -->
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="progress.js" defer></script>
+</head>
+
+<body>
+
+  <h1>Lazar Mihaljevic Interaction A3</h1>
+
+  <!-- For starters, I wanted to create the link between the main interaction webpage and the randomiser webpage so I could go from one point to another
+  without needing to open them up seperately all the time. Of course this would remain but size and location would be changed as things go forward.  -->
+  <h2>
+
+    <div class="flex-container-interaction">
+
+      <!-- This is the main primary feature of the interaction page which lets the user hop to the randomiser webpage, this is also accompanied by a
+      loading bar so the user is aware of how long they need to wait until it takes them to their destination. -->
+
+    <button id="load-link" onclick="move();loadPageAfterDelay(5000, './randomiser.html')">Start Randomising!</button>
+    <div id="myProgress">
+      <div id="myBar">10%</div>
+    </div>
+
+    <!-- Below are the showcase shifting images which animate through a selection of images that of which the user can randomise and assemble.
+    Ultimately, this is just added in to feature some feedback in a playful method which lets the users know what they can get.
+    These images aren't randomised and shuffle in a loop consistently without change. -->
+
+    <!-- Slideshow 1 -->
+    <div class="image fade">
+      <img src="./images/bear1.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bee1.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird1.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird2.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird3.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird4.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird5.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/bird6.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 2 -->
+    <div class="image2 fade">
+      <img src="./images/bird7.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/bird8.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/bird9.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/bird10.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/bird11.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/bird12.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/cat1.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/crab1.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 3 -->
+    <div class="image3 fade">
+      <img src="./images/dog1.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/dog2.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/dog3.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/fly1.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/fly2.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/fly3.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/frog1.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/lizard1.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 4 -->
+    <div class="image4 fade">
+      <img src="./images/lizard2.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/lizard3.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/rabbit1.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/snail1.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/spider1.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/squirrel1.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/tiger1.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/zebra1.png" width="150">
+    </div>
+
+  </div>
+  </h2>
+
+  <!-- This is where all the writing will be done. -->
+
+  <h3>
+     <p>I initially had the idea of making the user interface simple enough so the user wouldn't need to waste time and jump
+     straight into the randomiser so my specific design decision was to make the interaction and randomiser HTML's a single page with no scrolling needed.
+     With the :root set with multiple variables, I experimented many unique colour palette choices that both HTML's could work with, originally starting with
+     orange and ending with a strong light blue and dark blue design. The design I first had in mind when presenting the ideas was to create a playful
+     feedback summoning simulator, in short, creating a randomiser that picks out an image from a variety of options randomly. I felt strong with the idea but
+     I soon came to a roadblock which was figuring out how to make multiple random images appear at the same time and making them disappear at the same time
+     when inputting the randomiser button once more. I brainstormed solutions and while the original idea
+     had lots of feedback to offer, the playfulness didn't shine the way I wanted it to. Clicking
+     a single button and not being in control was a boring and uncomfortable experience so I decided on making a simulator capable of making
+     a dream team.</p>
+
+     <p>Since I'm still new to javascript, <i><a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">W3schools</a></i> would teach me the
+     basics of coding a progress bar, a primary way of providing feedback to the user so they know their input did something and now know to wait still the
+     progress bar hits 100%. Progress bars while functioning as feedback could also play the role of being playful as instead of just sitting there, the user
+     actually has something to watch though this could be bias for the audience.</p>
+
+     <p><i><a href="https://www.youtube.com/watch?v=1YjybCS4B2U">Melvin Adekanye</a></i> helped me learn about the image_array, the main focus of the 
+    randomiser as it allows the buttons to randomly choose an image from the wide selection given. This is where the playfulness of the website comes in
+    as some may want to create their dream team seriously or mess around with the webpage. Since there are 5 image_shower slots set, there are many potential outcomes and basically every
+     user who may find themselves using it will have a different and unique outcome from their peers. This proved to be a much more playful experience overall.</p>
+
+     <p>A unique design choice I wanted was inspired by mobile gacha games as well as the following link which helped me achieve designing it.
+      <i><a href="https://www.educative.io/answers/how-to-create-an-automatic-slideshow-with-html-css-and-js">Educative.io</a></i> was able to basically show me how I could create a
+     slideshow between images. Many gacha games have something like this for their featured units or characters so I wanted to create something similar
+     for the interaction page to give the users an idea on what there is to offer. There isn't much feedback here but the animations are enjoyable to watch.</p>
+
+     <p>Lastly is arguably the most crucial add-on for feedback which is the animation played upon clicking the buttons. The obvious things like :hover and :active
+     are implemented although an animation is required for when the images appear, a simple fade in animation is basically all that's required so the users
+     are aware that the input worked in the situation they randomise the same image multiple times. <i><a href="https://www.delftstack.com/howto/javascript/javascript-fade-in-image/">Delftstack</a></i>
+     was where I discovered how to javascript this into the webpage and like before, it would require me to make 5 seperate functions for each button.</p>
+
+     <p>Originally whilst working on this assignment, I had a bunch of characters from offical games or movies but that has been changed to simple animal stock
+      photos sourced from <i><a href="https://pixabay.com/">Pixabay</a></i> for free to avoid any copyright issues.
+     </p>
+
+  </h3>
+  
+  <div id="load-throbber"></div>
+  <script src="slideshow.js"></script>
+
+</body>
+
+</html>
