@@ -1,0 +1,212 @@
+/* Much was done through the CSS styling of both HTML's. The :root was the first so I could always change the color palette without constantly changing
+everything on the CSS which saves both time and space. */
+
+:root {
+    --col-1:white;
+    --col-2:black;
+    --col-3:rgb(70, 219, 230);
+    --col-4:rgb(0, 131, 175);
+    --col-5:rgb(188, 188, 188);
+    --col-6: gray;
+    --col-7:aquamarine;
+    --font-1:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --border-1: double var(--col-4) 15px;
+}
+
+/* h1 would play as the titles for both HTML's and also the button for randomiser.html. This was done since I wanted that button on the center of the page
+as well just below the title so it's easy to spot. */
+
+h1 {
+    font-family: var(--font-1);
+    color: var(--col-1);
+
+    text-align:center;
+    font-size:70px;
+    margin:auto;
+}
+
+h1 button {
+  font-family:var(--font-1);
+  text-align:center;
+  color: var(--col-2);
+  font-size:20px;
+  margin:auto;
+}
+
+/* This will be seen on the other button, I've added :hover and :active for additional feedback for the users, mainly this would just affect the cursor
+into a pointer as well as change up the background colour upon hovering and clicking to a light gray and darker gray respectfully. */
+
+h1 button:hover {
+  cursor:pointer;
+  background-color: var(--col-5);
+}
+
+h1 button:active {background-color: var(--col-6);}
+
+h2 button {
+    font-family: var(--font-1);
+    color: var(--col-2);
+    border: var(--border-1);
+
+    text-align:center;
+    margin:55px;
+    margin-top:auto;
+    margin-bottom:auto;
+    font-size:45px;
+}
+
+/* Same case with h1 button although I wanted to add an animation considering how it's takes the user to the primary feature of the webpage, any additional
+feedback is necessary so the users are aware it's a clickable link. */
+
+h2 button:hover {
+    animation: button-extend infinite 1s;
+    cursor:pointer;
+    background-color: var(--col-5);
+}
+
+h2 button:active {background-color: var(--col-6);}
+
+h2 img {margin:5px;}
+
+/* This is mainly just to make the user interface look nicer and appealing for the users although it can also work as an additional piece of feedback in case
+the user thinks their device might've crashed or froze. */
+
+h3 {
+    color: var(--col-2);
+    border: var(--border-1);
+    background-color: var(--col-1);
+    animation: bg-animation infinite 3s ease-in;
+    font-family: var(--font-1);
+}
+
+h4 button {
+  font-family: var(--font-1);
+  color: var(--col-2);
+  border: var(--border-1);
+
+  text-align:center;
+  margin:55px;
+  margin-top:auto;
+  margin-bottom:auto;
+  font-size:45px;
+}
+
+h4 button:hover {
+  cursor:pointer;
+  background-color: var(--col-5);
+}
+
+h4 button:active {background-color: var(--col-6);}
+
+body {background-color: var(--col-3);}
+
+/* Initially this was just set as <img> although an issue discover when viewing the interaction html webpage was that the automatic slideshow javascript while
+still functioning to shift between images wasn't actually displaying anything so it was changed to <img > div>. This is necessary for feedback purposes so
+the user is aware their input was successful when interacting with the 5 unit buttons. */
+
+img > div {
+  opacity: 0;
+  filter: alpha(opacity=40);
+}
+
+/* The flex container elements allow for a tidy setup for both HTML's so everything is lined up nicely. */
+/* Regarding design, I wanted something clean and easy to navigate for the users without the need of scrolling, the only exception of this rule is
+for the loading bar on randomiser.html as when processing, it is quite large, something I'd like to fix. */
+
+.flex-container-interaction {
+    display: flex;
+    background-color: var(--col-1);
+    border: var(--border-1);
+    animation: bg-animation infinite 3s ease-in;
+}
+  
+.flex-container-interaction > div {
+    background-color: var(--col-4);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    size:18px;
+    text-align:center;
+}
+
+.flex-container-randomiser{
+    display: flex;
+    background-color: var(--col-1);
+    border: var(--border-1);
+    animation: bg-animation infinite 3s ease-in;
+}
+
+.flex-container-randomiser > div {
+    background-color: var(--col-4);
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    size:20px;
+    animation: border-change infinite 2s ease;
+}
+
+/* Another element designed for the slideshow.js. An animation which fades from one image to the next. */
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+/* Here is the progress/loading bars, more feedback for the users so they are aware of how long they must wait, once 100% hits, it takes the user down
+to the randomiser.html webpage. */
+
+#myProgress {
+    width: 200%;
+    background-color: var(--col-5);
+    display:none;
+}
+
+/* A :hover was made which transforms the cursor to a waiting cursor to indicate the user needs to wait a moment for the 'loading in' of the randomiser. */
+
+#myProgress:hover {cursor: wait;}
+  
+#myBar {
+    width: 10%;
+    height: 230px;
+    background-color: var(--col-3);
+    text-align: center;
+    line-height: 230px;
+    color: var(--col-1);
+    animation: progress-animation infinite 2s ease-out;
+    font-family:var(--font-1);
+}
+
+#myBar:hover {cursor: wait;}
+
+/* Many animations were designed for these webpages. The first being a background colour shifting animation which just changes the colour of the background.
+While it isn't necessary to the primary function, it is visually pleasing to see. The second is the same but for both loading bars. The third is the fading
+between newly randomised images on randomiser.html. Next is the font shifting button which lowers the font and returns it to normal constantly. Lastly, the 
+border colour changing borders, this is just for the images pulled and doesn't apply to all borders. */
+@keyframes bg-animation {
+    0% {background-color:var(--col-1);}
+    50% {background-color:var(--col-7);}
+    100% {background-color:var(--col-1);}
+}
+
+@keyframes progress-animation {
+    0% {background-color:var(--col-3);}
+    50% {background-color:var(--col-4);}
+    100% {background-color:var(--col-3);}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 1}
+}
+
+@keyframes button-extend {
+    0% {font-size:45px;}
+    50% {font-size:40px;}
+    100% {font-size:45px;}
+}
+
+@keyframes border-change {
+  0% {border:var(--col-4) double 2px;}
+  50% {border:var(--col-3) double 2px;}
+  100% {border:var(--col-4) double 2px;}
+}

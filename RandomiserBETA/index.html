@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazar Mihaljevic Interaction A3</title>
+
+  <!-- Many Javascripts were coded as well as the CSS which is all linked up here. -->
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="progress.js" defer></script>
+</head>
+
+<body>
+
+  <h1>Lazar Mihaljevic Interaction A3</h1>
+
+  <!-- For starters, I wanted to create the link between the main interaction webpage and the randomiser webpage so I could go from one point to another
+  without needing to open them up seperately all the time. Of course this would remain but size and location would be changed as things go forward.  -->
+  <h2>
+
+    <div class="flex-container-interaction">
+
+      <!-- This is the main primary feature of the interaction page which lets the user hop to the randomiser webpage, this is also accompanied by a
+      loading bar so the user is aware of how long they need to wait until it takes them to their destination. -->
+
+    <button id="load-link" onclick="move();loadPageAfterDelay(5000, './randomiser.html')">Start Making A Dream Team!</button>
+    <div id="myProgress">
+      <div id="myBar">10%</div>
+    </div>
+
+    <!-- Below are the showcase shifting images which animate through a selection of images that of which the user can randomise and assemble.
+    Ultimately, this is just added in to feature some feedback in a playful method which lets the users know what they can get.
+    These images aren't randomised and shuffle in a loop consistently without change. -->
+
+    <!-- Slideshow 1 -->
+    <div class="image fade">
+      <img src="./images/batman.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/biden.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/craig.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/eliwood.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/sans.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/zoro.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/rock.png" width="150">
+    </div>
+    <div class="image fade">
+      <img src="./images/ike.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 2 -->
+    <div class="image2 fade">
+      <img src="./images/big.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/obama.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/lord.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/roblox.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/ronald.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/omj.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/thanos.png" width="150">
+    </div>
+    <div class="image2 fade">
+      <img src="./images/rose.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 3 -->
+    <div class="image3 fade">
+      <img src="./images/hinata.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/george.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/shrek.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/sk.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/speedwagon.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/ikef.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/ninja.png" width="150">
+    </div>
+    <div class="image3 fade">
+      <img src="./images/dev.png" width="150">
+    </div>
+
+
+    <!-- Slideshow 4 -->
+    <div class="image4 fade">
+      <img src="./images/tommy.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/trump.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/vegeta.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/vox.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/waluigi.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/krab.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/shaggy.png" width="150">
+    </div>
+    <div class="image4 fade">
+      <img src="./images/bart.png" width="150">
+    </div>
+
+  </div>
+  </h2>
+
+  <!-- This is where all the writing will be done. -->
+
+  <h3>
+    (Beta Testing Version)
+  </h3>
+
+  <div id="load-throbber"></div>
+  <script src="slideshow.js"></script>
+
+</body>
+
+</html>
